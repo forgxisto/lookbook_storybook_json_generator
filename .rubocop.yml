@@ -1,13 +1,34 @@
+require:
+  - rubocop-rspec
+
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false
 
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+  Exclude:
+    - "bin/**/*"
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Naming/VariableNumber:
+  Enabled: false
 
-Layout/LineLength:
-  Max: 120
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExpectChange:
+  Enabled: false
