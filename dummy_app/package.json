@@ -1,0 +1,27 @@
+{
+  "name": "dummy_app",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-controls": "^7.6.8",
+    "@storybook/addon-essentials": "^7.6.8",
+    "@storybook/addon-links": "^7.6.8",
+    "@storybook/blocks": "^7.6.8",
+    "@storybook/server": "^7.6.8",
+    "@storybook/server-webpack5": "^7.6.8",
+    "storybook": "^7.6.8"
+  }
+}
