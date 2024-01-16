@@ -21,7 +21,11 @@ module LookbookStorybookJsonGenerator
     attr_reader :code_object
 
     def title
-      code_object.namespace.title.gsub(code_object.namespace.sep, '/')
+      if code_object.namespace.root?
+        code_object.name.to_s.underscore.gsub(/_preview$/, '')
+      else
+        code_object.namespace.title.gsub(code_object.namespace.sep, '/')
+      end
     end
 
     def stories

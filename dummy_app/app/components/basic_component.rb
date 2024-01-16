@@ -1,5 +1,5 @@
 class BasicComponent < ViewComponent::Base
   def call
-    tag.p { 'viewcomponent component' }
+    tag.p { 'BasicComponent' }
   end
 end
