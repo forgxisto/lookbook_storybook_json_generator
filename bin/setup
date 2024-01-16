@@ -5,4 +5,5 @@ set -vx
 
 bundle install
 
+dummy_app/bin/sh bundle install
 # Do any other automated setup that you need to do here
