@@ -63,8 +63,8 @@ module LookbookStorybookJsonGenerator
       case input
       when 'toggle'
         'boolean'
-      when 'number'
-        'number'
+      when 'number', 'select', 'color', 'range'
+        input
       else
         'text'
       end
