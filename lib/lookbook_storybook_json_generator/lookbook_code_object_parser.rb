@@ -20,43 +20,37 @@ module LookbookStorybookJsonGenerator
 
     attr_reader :code_object
 
+    def preview_entity
+      @preview_entity ||= Lookbook::PreviewEntity.new(code_object)
+    end
+
     def title
-      if code_object.namespace.root?
-        code_object.name.to_s.underscore.gsub(/_preview$/, '')
-      else
-        code_object.namespace.title.gsub(code_object.namespace.sep, '/')
-      end
+      preview_entity.lookup_path.titleize
     end
 
     def stories
-      code_object.meths.map { story(_1) }
+      preview_entity.scenarios.map { story(_1) }
     end
 
-    def story(meth)
+    def story(scenario_entity)
       {
-        name: meth.name,
-        parameters: parameters(meth),
-        args: args(meth),
-        argTypes: arg_types(meth)
+        name: scenario_entity.name,
+        parameters: parameters(scenario_entity),
+        args: args(scenario_entity),
+        argTypes: arg_types(scenario_entity)
       }
     end
 
-    def parameters(meth)
-      { server: { id: "#{title.underscore}/#{meth.name}" } }
+    def parameters(scenario_entity)
+      { server: { id: scenario_entity.lookup_path } }
     end
 
-    def args(meth)
-      meth.parameters.each_with_object({}) do |(k, v), a|
-        key = k.delete(':').to_sym
-        # 値から引用符を削除し、シンボルがあれば文字列に変換
-        val = v.gsub(/'|"/, '').then { _1.start_with?(':') ? _1[1..] : _1 }
-
-        a[key] = val
-      end
+    def args(scenario_entity)
+      scenario_entity.tags.to_h { [_1.name, _1.value_default] }
     end
 
-    def arg_types(meth)
-      meth.tags.each_with_object({}) do |e, a|
+    def arg_types(scenario_entity)
+      scenario_entity.tags.each_with_object({}) do |e, a|
         a[e.name] = {
           control: { type: control_type(e.tag_args[:input]) },
           name: e.name.camelcase,

@@ -1,4 +1,4 @@
-class ViewComponentExamplePreview < Lookbook::Preview
+class BasicComponentPreview < Lookbook::Preview
   def default
     render BasicComponent.new
   end
