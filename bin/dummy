@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-dummy_app/bin/sh rails s -p 3000 & dummy_app/bin/sh npm run storybook

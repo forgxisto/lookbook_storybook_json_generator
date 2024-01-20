@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+dummy_app/bin/sh npm run storybook
