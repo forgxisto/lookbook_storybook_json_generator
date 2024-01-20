@@ -29,8 +29,9 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 A small Rails app for development is included in this repository. (located in the `dummy_app` directory)
 
 We provide a shortcut command to start this little Rails app.
-`bin/dummy_rails` ... start Rails
-`bin/dummy_storybook` ... start Storybook
+
+- `bin/dummy_rails` ... start Rails
+- `bin/dummy_storybook` ... start Storybook
 
 ## Contributing
 
