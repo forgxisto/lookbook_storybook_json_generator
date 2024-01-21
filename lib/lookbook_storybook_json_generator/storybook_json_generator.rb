@@ -6,7 +6,7 @@ module LookbookStorybookJsonGenerator
     def self.execute(code_objects, changes = nil)
       new(code_objects, changes).execute
     rescue => e
-      Rails.loggoer.warn "LookbookStorybookJsonGenerator #{e.message}"
+      Rails.logger.warn "LookbookStorybookJsonGenerator #{e.message}"
     end
 
     def initialize(code_objects, changes)
