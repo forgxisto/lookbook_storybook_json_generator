@@ -24,50 +24,50 @@ This JSON is created when the lookbook loads `_preview.rb`.
 
 ### example
 
-You may want to refer to `dummy_app` in this repository.
+0.  You may want to refer to `dummy_app` in this repository.
 
-1. First, write the following in Gemfile and complete the lookbook settings.
+1.  First, write the following in Gemfile and complete the lookbook settings.
 
-```
-gem 'lookbook'
-gem 'lookbook_storybook_json_generator'
-```
+    ```
+    gem 'lookbook'
+    gem 'lookbook_storybook_json_generator'
+    ```
 
-Please refer to the official website for the lookbook.
-https://lookbook.build/
+    Please refer to the official website for the lookbook.
+    https://lookbook.build/
 
-2. Create `_preview.rb` according to the lookbook description rules.
+2.  Create `_preview.rb` according to the lookbook description rules.
 
-By default, it is created under the `test/components/previews/` directory.
+    By default, it is created under the `test/components/previews/` directory.
 
-3. Start Rails.
+3.  Start Rails.
 
-At this point, the lookbook preview file is read and a JSON file is created in the same directory.
+    At this point, the lookbook preview file is read and a JSON file is created in the same directory.
 
-4. Install Storybook.
+4.  Install Storybook.
 
-Please refer to the official website for Storybook.
-https://storybook.js.org/
+    Please refer to the official website for Storybook.
+    https://storybook.js.org/
 
-5. To reference the JSON created with this gem in Storybook, use `@storybook/server-webpack5
+5.  To reference the JSON created with this gem in Storybook, use `@storybook/server-webpack5
 Add `.
 
-```
-npm install @storybook/server-webpack5
-```
+    ```
+    npm install @storybook/server-webpack5
+    ```
 
-6. Set up `.storybook/main.js` and `.storybook/preview.js`.
+6.  Set up `.storybook/main.js` and `.storybook/preview.js`.
 
-Again, `dummy_app/.storybook/` in this repository may be helpful.
+    Again, `dummy_app/.storybook/` in this repository may be helpful.
 
-See the repository README for details.
-https://www.npmjs.com/package/@storybook/server-webpack5
+    See the repository README for details.
+    https://www.npmjs.com/package/@storybook/server-webpack5
 
-7. Launch Storybook.
+7.  Launch Storybook.
 
-That's it! If all goes well, the preview created in lookbook will also be reflected in Storybook.
+    That's it! If all goes well, the preview created in lookbook will also be reflected in Storybook.
 
-If you have any problems, please raise an issue in this repository.
+    If you have any problems, please raise an issue in this repository.
 
 ## Development
 
@@ -79,6 +79,8 @@ We provide a shortcut command to start this little Rails app.
 
 - `bin/dummy_rails` ... start Rails
 - `bin/dummy_storybook` ... start Storybook
+
+If you use overmind, we provide a Procfile.
 
 ## Contributing
 
