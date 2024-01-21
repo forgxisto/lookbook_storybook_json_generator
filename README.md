@@ -3,6 +3,8 @@
 This is a gem that allows you to use lookbook with storybook.
 It outputs JSON that can be used with storybook.
 
+https://github.com/forgxisto/lookbook_storybook_json_generator/assets/1164914/08be7939-6882-43cd-9d60-4e4369d007ed
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
